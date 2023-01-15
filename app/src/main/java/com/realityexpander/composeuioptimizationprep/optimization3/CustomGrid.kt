@@ -39,7 +39,7 @@ fun CustomGrid(
             horizontalArrangement = Arrangement.Center
         ) {
             firstRowFeeds.forEach { feed ->
-                key(feed.id) {
+                key(feed.id) { // <--- key here - Prevents recomposition
                     VideoFeedView(feed = feed)
                 }
             }
@@ -49,7 +49,7 @@ fun CustomGrid(
             horizontalArrangement = Arrangement.Center
         ) {
             secondRowTracks.forEach { feed ->
-                key(feed.id) {
+                key(feed.id) { // <--- key here - Prevents recomposition
                     VideoFeedView(feed = feed)
                 }
             }

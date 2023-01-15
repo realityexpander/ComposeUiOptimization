@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.realityexpander.composeuioptimizationprep.optimization1.MainViewModel
 import com.realityexpander.composeuioptimizationprep.optimization1.RgbSelector
-import com.realityexpander.composeuioptimizationprep.optimization2.Optimization3
+import com.realityexpander.composeuioptimizationprep.optimization2.Optimization2
 import com.realityexpander.composeuioptimizationprep.optimization3.CustomGrid
 import com.realityexpander.composeuioptimizationprep.optimization3.FeedViewModel
 import com.realityexpander.composeuioptimizationprep.ui.theme.ComposeUiOptimizationPrepTheme
@@ -27,20 +27,20 @@ class MainActivity : ComponentActivity() {
 
                 // One at a time:
 
-                // Problem 1: not using a @Stable object
+//                // Problem 1: not using a @Stable object
 //                Optimization1()
 
-                // ???
-//                Optimization2()
+//                // Problem 2: Using a class from an external module
+//                Optimization2(
+//                    ExternalUser(
+//                        id = "1",
+//                        email = "a@demo.com",
+//                        username = "John2"
+//                    )
+//                )
 
-                // Problem 3: Using a class from an external module
-                Optimization3(
-                    ExternalUser(
-                        id = "1",
-                    email = "a@demo.com",
-                    username = "John2"
-                    )
-                )
+                // Problem 3: Not using keys for custom layouts
+                Optimization3()
 
             }
         }
@@ -78,17 +78,17 @@ fun Optimization1() {
 //                // viewModel.changeColor(it)
 //
 //                // Option 1
-//                //changeColorLambda(it)  // use a remembered lambda stored in a variable
+//                // changeColorLambda(it)  // use a remembered lambda stored in a variable
 //
 //                // option 2
-//                //color = it  // use a remembered value
+//                // color = it  // use a remembered value
 //            }
         )
     }
 }
 
 @Composable
-fun Optimization2() {
+fun Optimization3() {
     val viewModel = viewModel<FeedViewModel>()
     val feeds = viewModel.feeds
 

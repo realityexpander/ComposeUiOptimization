@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
-import androidx.compose.ui.graphics.Color
 import com.plcoding.external_module.ExternalUser
 import java.util.*
 
@@ -47,7 +46,7 @@ fun WelcomeViewAlternative3(
 }
 
 @Composable
-fun Optimization3(
+fun Optimization2(
     user2: ExternalUser
 ) {
     var user by remember {

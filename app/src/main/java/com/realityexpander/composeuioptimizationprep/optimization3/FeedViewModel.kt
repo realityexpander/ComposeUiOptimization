@@ -13,7 +13,7 @@ class FeedViewModel: ViewModel() {
     var feeds by mutableStateOf(
         (1..3).map {
             VideoFeed(
-                id = UUID.randomUUID().toString(),
+                id = UUID.randomUUID().toString(), // Add id for key, prevents recomposition
                 username = "User $it",
                 backgroundColor = Color(Random.nextLong(0xFFFFFFFF))
             )
